@@ -1,0 +1,47 @@
+{
+  "env": {
+    "cypress/globals": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:cypress/recommended"
+  ],
+  "ignorePatterns": ["cypress/plugins"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "cypress"],
+  "root": true,
+  "rules": {
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error",
+    "cypress/no-pause": "error",
+    "semi": [1, "never"],
+    "arrow-body-style": 0,
+    "import/prefer-default-export": 0,
+    "import/extensions": [
+      2,
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-extra-semi": 0,
+    "operator-linebreak": 0,
+    "implicit-arrow-linebreak": 0,
+    "function-paren-newline": 0,
+    "object-curly-newline": 0,
+    "no-trailing-spaces": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": { "config": "webpack.config.js" }
+    }
+  }
+}

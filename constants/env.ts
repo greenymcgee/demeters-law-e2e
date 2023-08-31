@@ -1,0 +1,1 @@
+export const DEMETERS_LAW_HOST = process.env.CYPRESS_DEMETERS_LAW_HOST
