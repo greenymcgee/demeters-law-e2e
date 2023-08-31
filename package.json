@@ -1,0 +1,10 @@
+{
+  "name": "demeters-law-e2e",
+  "version": "1.0.0",
+  "description": "The e2e testing suite for Demeter's Law",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Houston Green",
+  "license": "ISC"
+}
