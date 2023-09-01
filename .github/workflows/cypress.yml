@@ -1,5 +1,9 @@
 name: Cypress Tests
 on: [push]
+
+env:
+  CYPRESS_DEMETERS_LAW_HOST: ${{ secrets.CYPRESS_DEMETERS_LAW_HOST }}
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
