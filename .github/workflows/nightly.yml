@@ -1,0 +1,30 @@
+name: Nightly Tests
+
+on:
+  # schedule:
+  #   - cron: '30 10 * * 1,2,3,4,5'
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run-nightly-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          start: npm start
+          wait-on: 'http://localhost:3001'
+          record: true
+          parallel: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_DEMETERS_LAW_HOST: ${{ secrets.CYPRESS_DEMETERS_LAW_HOST }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
