@@ -2,7 +2,7 @@ name: Production Nightly Tests
 
 on:
   schedule:
-    - cron: '30 10 * * 1,2,3,4,5'
+    - cron: '30 10 * * *'
   workflow_dispatch:
 
 jobs:
